@@ -1,0 +1,87 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: f lex-start; /* Align content to the top */
+    min-height: 100vh; /* Ensure the body takes up the full height */
+}
+
+/* Report Header */
+.report-header {
+    width: 100%;
+   /* Optional: Limit the width for better control */
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 20px 0;
+    border-radius: 8px;
+    margin-top: 20px; /* Space from the top of the page */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+}
+
+/* Header Content */
+.header-content {
+    text-align: center; /* Center text inside header content */
+}
+
+/* Report Content */
+.report-content {
+    width: 100%;
+  /* Optional: Limit the width for better control */
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Space below the header */
+    text-align: left; /* Ensure text alignment is left */
+}
+
+.report-content h2 {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+/* Report Table */
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.report-table th, .report-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+
+}
+
+.report-table th {
+    background-color: #f4f4f4;
+}
+
+/* Report Footer */
+.report-footer {
+    text-align: center;
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px; /* Optional: Limit the width for better control */
+}
+
+.report-footer p {
+    margin: 5px 0;
+}
+
+.navbar-expand-lg{
+    width:100%;
+}

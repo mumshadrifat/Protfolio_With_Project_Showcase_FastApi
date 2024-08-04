@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #e0f2f1; /* Light teal background */
+        }
+
+        .report-header, .report-content, .report-footer {
+            width: 100%;
+            max-width: 90vw; /* Responsive width */
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .report-header {
+            text-align: center;
+            font-size: 80%;
+        }
+
+        .report-content {
+            text-align: center;
+        }
+
+        .report-content h2 {
+            font-size: 90%;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .report-content p {
+            font-size: 90%;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            font-size: 80%;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #20B2AA;
+        }
+
+        .report-footer {
+            text-align: center;
+            font-size: 80%;
+        }
+    </style>
+</head>
+<body>
+<header class="report-header">
+    <div>
+        <h1>Monthly Sales Report</h1>
+        <p id="current-date"></p>
+    </div>
+</header>
+<section class="report-content">
+    <div>
+        <h2>Executive Summary</h2>
+        <p>This report provides an overview of the sales performance for the month of July 2024.</p>
+        <h2>Sales Data</h2>
+        <div style="
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            ">
+            <table id="sales-table" class="report-table">
+                <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Product Name</th>
+                    <th>Quantity Sold</th>
+                    <th>Price</th>
+                    <th>VAT Rate</th>
+                    <th>VAT Amount</th>
+                    <th>Line Amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Data will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <h2>Analysis</h2>
+        <p>The sales for July show a steady increase compared to the previous month, with Product B leading in
+            revenue.</p>
+        <h2>Conclusion</h2>
+        <p>Overall, the sales performance in July has been strong, with significant contributions from all product
+            lines.</p>
+    </div>
+</section>
+<footer class="report-footer">
+    <p>Prepared by: Orange Solution Team</p>
+    <p>Contact: zaberp@united.com</p>
+</footer>
+
+<script>
+    async function fetchSalesData() {
+        try {
+            const response = await fetch('http://localhost:8000/api/sales-data');
+            const data = await response.json();
+
+            const tableBody = document.querySelector('#sales-table tbody');
+            tableBody.innerHTML = ''; // Clear existing data
+
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.product}</td>
+                    <td>${item.product_name}</td>
+                    <td style="text-align: center;">${item.quantity_sold}</td>
+                    <td style="text-align: center;">${item.price}</td>
+                    <td style="text-align: center;">${item.vat_rate}</td>
+                    <td style="text-align: center;">${item.vat_amount}</td>
+                    <td style="text-align: center;">${item.line_amount}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        } catch (error) {
+            console.error('Error fetching sales data:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const dateElement = document.getElementById('current-date');
+
+        const currentDate = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+        dateElement.textContent = `Date: ${formattedDate}`;
+    });
+
+    // Fetch data when the page loads
+    window.onload = fetchSalesData;
+</script>
+</body>
+</html>
