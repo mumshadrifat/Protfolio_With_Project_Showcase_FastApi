@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Note</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Register Note</h1>
+        <form id="noteForm">
+            <input type="text" id="noteTitle" class="note-input" placeholder="Title" required>
+            <textarea id="noteContent" class="note-input" placeholder="Content" rows="4" required></textarea>
+            <button type="submit" class="add-note-btn">Save Note</button>
+        </form>
+        <button class="add-note-btn" onclick="/">Back to Notes</button>
+    </div>
+    <script>
+        document.getElementById('noteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('noteTitle').value.trim();
+            const content = document.getElementById('noteContent').value.trim();
+            if (title && content) {
+                alert(`Note Saved!\nTitle: ${title}\nContent: ${content}`);
+                // Here you would normally send the data to your server or save it locally
+                document.getElementById('noteTitle').value = '';
+                document.getElementById('noteContent').value = '';
+            } else {
+                alert('Please fill in both title and content.');
+            }
+        });
+    </script>
+</body>
+</html>

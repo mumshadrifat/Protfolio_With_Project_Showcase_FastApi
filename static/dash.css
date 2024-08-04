@@ -1,0 +1,153 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative; /* or absolute, fixed */
+    z-index: 1000; /* Ensure this is higher than other elements */
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it circular */
+    margin-bottom: 10px; /* Spacing below image */
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f0f0f0;
+}
+
+section {
+    padding: 60px 0;
+    margin-top: 100px; /* Adjust based on header height
+}
+
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.project {
+    width: 30%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.project .project-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.project:hover .project-card {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #f0f0f0;
+}
